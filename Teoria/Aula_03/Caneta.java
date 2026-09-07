@@ -1,10 +1,12 @@
+package Teoria.Aula_03;
+
 public class Caneta {
 
-    public String modelo;
-    public String cor;
-    public Float ponta;
-    public Integer carga;
-    public Boolean tampada;
+    private String modelo;
+    private String cor;
+    private Float ponta;
+    private Integer carga;
+    private Boolean tampada;
 
     public void rabiscar(){
         if (this.tampada == true) {
@@ -25,6 +27,7 @@ public class Caneta {
     public void destampar(){
        this.tampada = false;
     }
+
     public void status(){
         System.out.println("Uma caneta: " + this.cor);
         System.out.println("Esta tampada? " + this.tampada);
