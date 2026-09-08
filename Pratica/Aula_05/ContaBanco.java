@@ -8,6 +8,12 @@ public class ContaBanco {
     private float saldo;
     private boolean statusConta;
 
+    //construtor padrão
+    public ContaBanco(){
+        this.setStatusConta(false);
+        this.setSaldo(0f);
+    }
+
     //getters e setters
     public int getNumeroConta() {
         return this.numeroConta;
@@ -78,8 +84,45 @@ public class ContaBanco {
         }
     }
 
-    public void pagarMensal(){
-
+    public void pagarMensal() {
+        int valorMensalidade = 0;
+        if (this.getTipo().equals("CC")){
+            valorMensalidade = 12;
+        } else if (this.getTipo().equals("CP")) {
+            valorMensalidade = 20;
+        }
+        if (this.getStatusConta()) {
+            if (this.getSaldo() >= valorMensalidade) {
+                this.setSaldo(getSaldo()-valorMensalidade);
+            } else {
+                System.out.println("Saldo insuficiente para realizar a compra!");
+            }
+        } else {
+            System.out.println("A conta não existe, logo, nenhum valor pode ser cobrado!");
+        }
     }
 
+    public void sacar(float valorSaque) {
+        if (this.getStatusConta()) {
+            if (this.getSaldo() >= valorSaque) {
+                this.setSaldo(this.getSaldo()- valorSaque);
+            } else {
+                System.out.println("Impossivel sacar, saldo insuficiente!");
+            }
+        } else {
+            System.out.println("A conta não está ativa!");
+        }
+    }
+
+    //mostrar status da conta
+
+    public void estadoConta() {
+        System.out.println("----------------------");
+        System.out.println("Número da conta: " + this.getNumeroConta());
+        System.out.println("Tipo da conta: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo da conta: " + this.getSaldo());
+        System.out.println("Status da conta: " + this.getStatusConta());
+
+    }
 }
