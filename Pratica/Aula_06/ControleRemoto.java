@@ -103,7 +103,7 @@ public class ControleRemoto implements Controlador {
         if (this.isLigado()) {
             if (this.getVolume() - diminuicao < 0) {
                 int maxDiminuicao = getVolume();
-                System.out.println("Dimiua o volume " + maxDiminuicao + "unidades a menos!");
+                System.out.println("O maximo que você pode diminuir é " + maxDiminuicao);
             } else {
                 this.setVolume(this.getVolume() - diminuicao);
                 System.out.println("Novo volume: " + this.getVolume());
