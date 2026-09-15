@@ -137,7 +137,7 @@ public class Lutador {
         System.out.println("Categoria: " + this.getCategoria());
         System.out.println("------------");
         System.out.println("Cartel: ");
-        System.out.print("Vitorias :" + this.getVitorias() + " " + "Derrotas: " + this.getDerrotas() + " " + "Empates: " + this.getEmpates());
+        System.out.println("Vitorias :" + this.getVitorias() + " " + "Derrotas: " + this.getDerrotas() + " " + "Empates: " + this.getEmpates());
     }
 
     public void ganharLuta() {
