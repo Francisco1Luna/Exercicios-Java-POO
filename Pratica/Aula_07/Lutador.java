@@ -78,7 +78,17 @@ public class Lutador {
     }
 
     public String getCategoria() {
-        return this.categoria;
+        if (this.peso < 52.2) {
+            return ("Peso inválido, por favor insira um peso maior ou igual a 52.2 kg");
+        } else if (this.peso >= 52.2 && this.peso < 70.3) {
+            return ("Peso leve");
+        } else if (this.peso >= 70.3 && this.peso < 83.9) {
+            return ("Peso médio");
+        } else if (this.peso >= 83.9 && this.peso <= 120.2) {
+            return ("Peso pesado");
+        } else {
+            return ("Peso inválido, por favor insira um peso menor ou igual a 120.2");
+        }
     }
 
     private void setCategoria(String categoria) {
@@ -109,9 +119,38 @@ public class Lutador {
         this.empates = empates;
     }
 
-
-
     //metodos classe
+    public void apresentar() {
+        System.out.println("Nome:" + this.getNome());
+        System.out.println("Nacionalidade: " + this.getNacionalidade());
+        System.out.println("Idade: " + this.getIdade());
+        System.out.println("Altura: " + this.getAltura());
+        System.out.println("Categoria: " + this.getCategoria());
+        System.out.println("-----------------");
+        System.out.println("Vitorias: " + this.getVitorias());
+        System.out.println("Derrotas: " + this.getDerrotas());
+        System.out.println("Empates: " + this.getEmpates());
+    }
+
+    public void status() {
+        System.out.println("Nome do lutador: " + this.getNome());
+        System.out.println("Categoria: " + this.getCategoria());
+        System.out.println("------------");
+        System.out.println("Cartel: ");
+        System.out.print("Vitorias :" + this.getVitorias() + " " + "Derrotas: " + this.getDerrotas() + " " + "Empates: " + this.getEmpates());
+    }
+
+    public void ganharLuta() {
+        this.setVitorias(getVitorias() + 1);
+    }
+
+    public void perderLuta() {
+        this.setDerrotas(getDerrotas() + 1);
+    }
+
+    public void empatarLuta() {
+        this.setEmpates(getEmpates() + 1);
+    }
 
 
 }
