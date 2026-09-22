@@ -14,9 +14,6 @@ public abstract class Animal {
         this.setQuantidadeMembros(quantidadeMembros);
     }
 
-    protected Animal() {
-    }
-
     //getters e setters
 
     public float getPeso() {

@@ -34,7 +34,7 @@ public class Peixe extends Animal{
 
     @Override
     public void alimentar() {
-        System.out.println("Comendo susbtâncias!");
+        System.out.println("Comendo subtâncias!");
     }
 
     @Override
