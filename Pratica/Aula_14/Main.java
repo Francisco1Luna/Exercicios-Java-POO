@@ -8,5 +8,10 @@ public class Main {
         Assistir video1 = new Assistir(video,gafanhoto);
 
         System.out.println(video1);
+        video1.avaliar(4.5f);
+        System.out.println(video1);
+        System.out.println(video.getAvaliacao());
+        video1.avaliar(5.0f);
+        System.out.println(video.getAvaliacao());
     }
 }

@@ -38,4 +38,13 @@ public class Assistir {
                 ", gafanhoto= " + gafanhoto +
                 '}';
     }
+
+    //metodos da classe
+    public void avaliar() {
+        this.video.setAvaliacao(5.0f);
+    }
+
+    public void avaliar(float nota) {
+        this.video.setAvaliacao((video.getAvaliacao() + nota)/2f);
+    }
 }
